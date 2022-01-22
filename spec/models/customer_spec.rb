@@ -20,9 +20,10 @@ RSpec.describe Customer, type: :model do
     expect(customer.full_name).to start_with("Sr. ")
   end
 
+  #Utilizando essa palavra ele vai trazer apenas os atributos em um hash do elemento que pediu
   it 'Usando o attributes_for' do
-    attrs = attributes_for(:customer)
-    customer = Customer.create(attrs)
+    attrs = attributes_for(:customer) # vai factories vai procurar o customer e vai trazer os atribuitos desse elemento
+    customer = Customer.create(attrs) # vai criar o customer com esses atributos
     expect(customer.full_name).to start_with("Sr. ")
   end
 
