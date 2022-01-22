@@ -53,5 +53,7 @@ RSpec.describe Customer, type: :model do
     expect(@customer.created_at).to be < Time.now
   end
 
+  #na hora que cria um customer vai estar um no model e criando um novo cliente e vai mudar 
+  #a quantidade de clientes em 1
   it { expect{ create(:customer) }.to change{Customer.all.size}.by(1) }
 end
