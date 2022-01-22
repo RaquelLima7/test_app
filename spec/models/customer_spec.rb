@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
   
+  #vc quer um customer, mas quer que o nome dele seja e passa o nome
   it '#full_name - Sobrescrevendo Atributo' do
     customer = create(:customer, name: "Jackson Pires" ) #Factorybot 
     customer1 = create(:customer, name: "Jackson Pires" )
@@ -14,6 +15,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it '#full_name' do
+    #nesse caso está user, pq colocou no customers.rb em factories o aliases
     customer = create(:user) # ou create(:customer)
     expect(customer.full_name).to start_with("Sr. ")
   end
