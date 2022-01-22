@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Customer, type: :model do
   
   it '#full_name - Sobrescrevendo Atributo' do
-    customer = create(:customer, name: "Jackson Pires" )
+    customer = create(:customer, name: "Jackson Pires" ) #Factorybot 
     customer1 = create(:customer, name: "Jackson Pires" )
     expect(customer.full_name).to eq("Sr. Jackson Pires")
   end
