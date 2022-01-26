@@ -11,6 +11,7 @@ RSpec.describe Order, type: :model do
     expect(orders.count).to eq(3)
   end
 
+  # Customer recebe create passando o customer_with_orders que foi marcado factory que chama a trait with_orders no customer.rb
   it 'has_many' do
     customer = create(:customer_with_orders)
     expect(customer.orders.count).to eq(3)

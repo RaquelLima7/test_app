@@ -31,10 +31,14 @@ FactoryBot.define do
       days_to_pay 15
     end
 
+    # Para poder criar vários pedidos no momento em que invocar um cliente, começa criando uma trait
+    # o padrão é 3 (linha 6) 
     trait :with_orders do
       after(:create) do |customer, evaluator|
-       create_list(:order, evaluator.qtt_orders, customer: customer)
+       create_list(:order, evaluator.qtt_orders, customer: customer) # evaluator e o qtt_orders que é o transient informado na linha 4
       end
+      # Cria uma lista de pedidos com a quantidade que a pessoa enviar, se não enviar vao ser o 3
+      # que é o valor informado no transient da linha 4 e o cliente vai ser o próprio da fábrica.
     end
 
     factory :customer_with_orders, traits: [:with_orders]
