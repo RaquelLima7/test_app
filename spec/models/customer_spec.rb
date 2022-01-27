@@ -49,7 +49,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it 'travel_to' do
-    travel_to Time.zone.local(2004, 11, 23, 01, 04, 44) do
+    travel_to Time.zone.local(2004, 05, 28, 01, 04, 44) do
       @customer = create(:customer_vip)
     end
 
