@@ -37,6 +37,8 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
