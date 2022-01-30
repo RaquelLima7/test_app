@@ -39,6 +39,7 @@ group :development, :test do
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'webmock'
   gem 'vcr'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
