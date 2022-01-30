@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_193702) do
+ActiveRecord::Schema.define(version: 2022_01_30_221150) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -23,4 +29,35 @@ ActiveRecord::Schema.define(version: 2021_08_07_193702) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "members", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_members_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "description"
+    t.integer "custumer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["custumer_id"], name: "index_orders_on_custumer_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "description"
+    t.decimal "price"
+    t.integer "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  add_foreign_key "orders", "custumers"
+  add_foreign_key "products", "categories"
 end
