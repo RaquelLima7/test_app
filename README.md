@@ -1,24 +1,10 @@
-# README
+<h2 align="center">Course "TDD with Ruby on Rails, RSpec and Capybara"</h2>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<br>
 
-Things you may want to cover:
+- Repository with my learning in Rails. 
 
-* Ruby version
+- <a href="https://github.com/RaquelLima7/rails-tdd" target="_blank">Repository to share learning from the course "TDD with Ruby on Rails, RSpec and Capybara".</a>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<br>
+<a href="https://www.udemy.com/course/rails-tdd/" target="_blank">Course link</a>
