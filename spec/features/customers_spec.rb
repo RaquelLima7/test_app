@@ -33,17 +33,20 @@ RSpec.feature "Customers", type: :feature, js: true do
   end
 
   it 'Creates a Customer' do
-    member = create(:member)
-    login_as(member, :scope => :member)
+    member = create(:member)  ##cria um membro
+    login_as(member, :scope => :member) ##login como no https://github.com/heartcombo/devise/wiki/How-To:-Test-with-Capybara
 
-    visit(new_customer_path)
+    visit(new_customer_path) ##visita a rota
 
+    #preenche o formulário
     fill_in('Name', with: Faker::Name.name)
     fill_in('Email', with: Faker::Internet.email)
     fill_in('Address', with: Faker::Address.street_address)
 
+    #clica no button
     click_button('Create Customer')
 
+    #quando cadastra espera que vai para página e tenha a mensagem
     expect(page).to have_content('Customer was successfully created.')
   end
 end
