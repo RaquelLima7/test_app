@@ -27,3 +27,20 @@
 <br>
 
 <%= link_to 'New Customer', new_customer_path %>
+
+<br/>
+<a href="#" id="my-link">Add Message</a>
+<div id="my-div"></div>
+
+<script>
+  var $link = document.querySelector("#my-link");  /// pega o link 
+
+  //add o evento com clique nele
+  $link.addEventListener('click', function(e){
+    e.preventDefault(); //não faz nada
+    //mas o mesmo tempo pede para esperar 4 segundos e depois add a palavra yes na div
+    setTimeout(function(){
+      document.querySelector("#my-div").innerHTML = "<h1>Yes!<h1>";
+    }, 3000);
+  }, false)
+</script>
